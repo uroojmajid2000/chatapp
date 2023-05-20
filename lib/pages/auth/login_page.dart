@@ -74,29 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                           },
                         ),
 
-                        //  TextFormField(
-                        //   decoration: textInputDecoration.copyWith(
-                        //       labelText: "Full Name",
-                        //       prefixIcon: Icon(
-                        //         Icons.person,
-                        //         color: Theme.of(context).primaryColor,
-                        //       )),
-                        //   onChanged: (val) {
-                        //     setState(() {
-                        //       fullName = val;
-                        //     });
-                        //   },
-                        //   validator: (val) {
-                        //     if (val!.isNotEmpty) {
-                        //       return null;
-                        //     } else {
-                        //       return "Name cannot be empty";
-                        //     }
-                        //   },
-                        // ),
-
-
-                        //======================
+                  
                         const SizedBox(height: 15),
                         TextFormField(
                           obscureText: true,

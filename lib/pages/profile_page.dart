@@ -1,5 +1,6 @@
 import 'package:vativeapp_chatapp_firebase/pages/auth/login_page.dart';
 import 'package:vativeapp_chatapp_firebase/pages/home_page.dart';
+import 'package:vativeapp_chatapp_firebase/pages/news_page.dart';
 import 'package:vativeapp_chatapp_firebase/service/auth_service.dart';
 import 'package:vativeapp_chatapp_firebase/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -72,6 +73,21 @@ class _ProfilePageState extends State<ProfilePage> {
             leading: const Icon(Icons.group),
             title: const Text(
               "Profile",
+              style: TextStyle(color: Colors.black),
+            ),
+          ),
+          ListTile(
+            onTap: () {
+              nextScreenReplace(context, NewsScreenPage(
+                 userName: widget.userName,
+                    email: widget.email,
+                    ));
+            },
+            contentPadding:
+                const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            leading: const Icon(Icons.newspaper),
+            title: const Text(
+              "News",
               style: TextStyle(color: Colors.black),
             ),
           ),
