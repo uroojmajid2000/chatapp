@@ -175,8 +175,7 @@ class _NewsScreenPageState extends State<NewsScreenPage> {
             )
           ],
         )),
-        body: 
-         Container(
+        body: Container(
           height: MediaQuery.of(context).size.height,
           child: isLoading
               ? Center(
@@ -189,17 +188,28 @@ class _NewsScreenPageState extends State<NewsScreenPage> {
                     scrollDirection: Axis.vertical,
                     itemCount: tournamentList.length,
                     itemBuilder: (context, index) {
-                      return newsDetails(
+                      return NewsDetails(
                         title: tournamentList[index]['title'].toString(),
                         urlToImage:
                             tournamentList[index]['urlToImage'].toString(),
                         author: tournamentList[index]['author'].toString(),
+                        description:
+                            tournamentList[index]['description'].toString(),
+                        publishedAt:
+                            // tournamentList[index]['description'].toString(),
+                            DateTime.parse(tournamentList[index]['publishedAt'])
+                                    .toString()
+                                    .substring(5, 10) +
+                                "-" +
+                                DateTime.parse(
+                                        tournamentList[index]['publishedAt'])
+                                    .toString()
+                                    .substring(0, 4),
+                        content: tournamentList[index]['content'].toString(),
                       );
                     },
                   ),
                 ),
-        )
-        
-        );
+        ));
   }
 }
