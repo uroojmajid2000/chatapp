@@ -50,7 +50,8 @@ class _LoginPageState extends State<LoginPage> {
                         const Text("Login now to chatting!",
                             style: TextStyle(
                                 fontSize: 15, fontWeight: FontWeight.w400)),
-                        Image.asset("assets/login.png"),
+                        // Image.asset("assets/login.png"),
+                        const SizedBox(height: 15),
                         TextFormField(
                           decoration: textInputDecoration.copyWith(
                               labelText: "Email",
@@ -74,7 +75,6 @@ class _LoginPageState extends State<LoginPage> {
                           },
                         ),
 
-                  
                         const SizedBox(height: 15),
                         TextFormField(
                           obscureText: true,

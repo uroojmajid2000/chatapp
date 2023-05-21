@@ -34,7 +34,7 @@ class _NewsScreenPageState extends State<NewsScreenPage> {
     var request = http.Request(
         'GET',
         Uri.parse(
-            'https://newsapi.org/v2/everything?q=tesla&from=2023-04-20&sortBy=publishedAt&apiKey=167d50e71fa649f397817c8df4d81173'));
+            'https://newsapi.org/v2/everything?apiKey=b5fabe4c8dd44cfc839430e4612176fd&domains=wsj.com'));
 
     http.StreamedResponse response = await request.send();
     print("response news api");
@@ -175,7 +175,8 @@ class _NewsScreenPageState extends State<NewsScreenPage> {
             )
           ],
         )),
-        body: Container(
+        body: 
+         Container(
           height: MediaQuery.of(context).size.height,
           child: isLoading
               ? Center(
@@ -188,16 +189,17 @@ class _NewsScreenPageState extends State<NewsScreenPage> {
                     scrollDirection: Axis.vertical,
                     itemCount: tournamentList.length,
                     itemBuilder: (context, index) {
-                      return Padding(
-                          padding: EdgeInsets.only(right: 8.0),
-                          child: NewsContainer(
-                            imageSource:
-                                tournamentList[index]['urlToImage'].toString(),
-                            title: tournamentList[index]['title'].toString(),
-                          ));
+                      return newsDetails(
+                        title: tournamentList[index]['title'].toString(),
+                        urlToImage:
+                            tournamentList[index]['urlToImage'].toString(),
+                        author: tournamentList[index]['author'].toString(),
+                      );
                     },
                   ),
                 ),
-        ));
+        )
+        
+        );
   }
 }
